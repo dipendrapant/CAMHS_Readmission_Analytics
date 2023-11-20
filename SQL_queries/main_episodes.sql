@@ -61,6 +61,8 @@ OrderedEpisodes as (
 		episode_start_date,
 		case 
 			when episode_id in (30030, 17066, 1961, 11265, 11128, 12480, 25968, 10896, 6928, 19053, 2260, 30475, 24416, 14871, 15616, 7564,6372, 10888, 3893) then episode_start_date 
+			when episode_id = 30117 then '2018-01-05'
+			when episode_id = 27901 then '2016-07-08'
 			else episode_end_date 
 		end as episode_end_date,
 		closingcode,
@@ -167,5 +169,6 @@ into  NextEpisodePeriodtable
 from NextEpisodePeriod e1
 inner join NextEpisodePeriod2 e2 on e1.episode_id = e2.episode_id
 inner join NextEpisodePeriod3 e3 on e1.episode_id = e3.episode_id
+where e1.pasient not in (select distinct pasient from NextEpisodePeriod where episode_end_date >'2017-09-06') -- to apply cut-off
 
 
