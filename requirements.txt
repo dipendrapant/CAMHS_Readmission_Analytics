@@ -1,0 +1,11 @@
+gower==0.1.2
+ipython==8.12.3
+kmodes==0.12.2
+matplotlib==3.8.0
+numpy==1.26.4
+pandas==2.2.0
+plotly==5.18.0
+python-dotenv==1.0.1
+scikit_learn==1.3.2
+scipy==1.12.0
+seaborn==0.13.2
